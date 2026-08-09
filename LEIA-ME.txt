@@ -1,18 +1,28 @@
-CLÃ FÊNIX — CONEXÃO VERCEL → VULTR
+CLÃ FÊNIX — GUERRA AO VIVO
 
-Substitua apenas:
-api/clan.js
-api/war.js
+Envie/substitua estes arquivos na RAIZ do repositório GitHub:
 
-Não altere script.js.
+1. guerra.html       (novo)
+2. guerra.css        (novo)
+3. guerra.js         (novo)
+4. index.html        (substituir o atual)
 
-Fluxo:
-Visitante -> Vercel -> /api/clan ou /api/war -> Vultr -> Clash of Clans
+NÃO ALTERE:
+- script.js
+- style.css
+- api/clan.js
+- api/war.js
+- servidor Vultr
+- token
 
-O token do Clash of Clans continua somente no servidor Vultr.
-Não é mais necessário colocar COC_API_TOKEN na Vercel.
+Depois que a Vercel terminar o deploy, abra:
+https://cl-f-nix.vercel.app/guerra.html
 
-Depois de enviar os dois arquivos ao GitHub:
-1. Aguarde a Vercel fazer o deploy automático.
-2. Abra https://cl-f-nix.vercel.app/api/clan
-3. Se aparecer o JSON do Fênix, a ligação está pronta.
+A página:
+- consulta /api/war;
+- atualiza automaticamente a cada 30 segundos;
+- mostra placar e destruição;
+- calcula ataques usados e restantes;
+- mostra cronômetro;
+- mostra ataques da Fênix;
+- mostra desempenho individual dos participantes.

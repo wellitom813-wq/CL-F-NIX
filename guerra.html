@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <title>Guerra ao Vivo | Clã Fênix</title>
+  <meta name="description" content="Guerra ao vivo do Clã Fênix com placar, ataques, estrelas e destruição atualizados automaticamente.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/guerra.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><span class="logo">🔥</span><span><b>CLÃ FÊNIX</b><small>Guerra ao Vivo</small></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+  <nav id="menu">
+    <a href="/">Início</a>
+    <a href="/#membros">Membros</a>
+    <a class="active-link" href="/guerra.html">Guerra ao Vivo</a>
+    <a href="/#ranking">Ranking</a>
+    <a href="/#recrutamento">Recrutamento</a>
+  </nav>
+</header>
+
+<main>
+  <section class="war-hero">
+    <div class="wrap">
+      <span class="eyebrow">⚔️ CENTRAL DE GUERRA</span>
+      <h1>GUERRA <em>AO VIVO</em></h1>
+      <p>Dados oficiais atualizados automaticamente pela API do Clash of Clans.</p>
+      <div class="live-line">
+        <span id="liveDot" class="live-dot"></span>
+        <strong id="warStatus">CONSULTANDO...</strong>
+        <small id="lastUpdate">Aguardando dados</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap war-dashboard">
+    <article class="war-scoreboard">
+      <div class="war-side">
+        <img id="clanBadge" class="war-badge" alt="Escudo Fênix">
+        <span class="team-label">NOSSO CLÃ</span>
+        <h2 id="clanName">FÊNIX</h2>
+        <div class="score-number"><span id="clanStars">--</span><small>⭐</small></div>
+        <p><b id="clanDestruction">--%</b> destruição</p>
+        <div class="attack-meter">
+          <span>Ataques</span>
+          <b id="clanAttacks">-- / --</b>
+        </div>
+      </div>
+
+      <div class="war-center">
+        <span class="vs">VS</span>
+        <div class="timer-card">
+          <small id="timerLabel">TEMPO RESTANTE</small>
+          <strong id="countdown">--:--:--</strong>
+        </div>
+        <div class="war-size"><span id="teamSize">-- x --</span><small>Tamanho da guerra</small></div>
+      </div>
+
+      <div class="war-side">
+        <img id="opponentBadge" class="war-badge" alt="Escudo adversário">
+        <span class="team-label">ADVERSÁRIO</span>
+        <h2 id="opponentName">ADVERSÁRIO</h2>
+        <div class="score-number"><span id="opponentStars">--</span><small>⭐</small></div>
+        <p><b id="opponentDestruction">--%</b> destruição</p>
+        <div class="attack-meter">
+          <span>Ataques</span>
+          <b id="opponentAttacks">-- / --</b>
+        </div>
+      </div>
+    </article>
+
+    <div class="grid four war-stats">
+      <article class="card stat">
+        <i>⚔️</i><small>ATAQUES FÊNIX</small>
+        <strong id="usedAttacks">--</strong><p id="remainingAttacks">-- restantes</p>
+      </article>
+      <article class="card stat">
+        <i>⭐</i><small>ESTRELAS</small>
+        <strong id="starsSummary">--</strong><p>Placar atual</p>
+      </article>
+      <article class="card stat">
+        <i>💥</i><small>DESTRUIÇÃO</small>
+        <strong id="destructionSummary">--%</strong><p>Média do clã</p>
+      </article>
+      <article class="card stat">
+        <i>🏹</i><small>ATAQUES POR MEMBRO</small>
+        <strong id="attacksPerMember">--</strong><p>Limite da guerra</p>
+      </article>
+    </div>
+
+    <section class="war-section">
+      <div class="heading">
+        <div>
+          <span class="eyebrow">ÚLTIMOS MOVIMENTOS</span>
+          <h2>Ataques da Fênix</h2>
+        </div>
+        <button class="refresh-btn" id="refreshBtn">↻ Atualizar</button>
+      </div>
+      <div id="attacksList" class="attacks-list">
+        <div class="empty-state">Carregando ataques...</div>
+      </div>
+    </section>
+
+    <section class="war-section">
+      <div class="heading">
+        <div>
+          <span class="eyebrow">ESCALAÇÃO</span>
+          <h2>Desempenho dos membros</h2>
+        </div>
+      </div>
+      <div id="membersWar" class="war-members"></div>
+    </section>
+
+    <section id="noWar" class="no-war" hidden>
+      <div>🛡️</div>
+      <h2>Sem guerra ativa</h2>
+      <p id="noWarText">O Clã Fênix não está em guerra neste momento.</p>
+      <a href="/" class="btn primary">Voltar ao início</a>
+    </section>
+  </section>
+</main>
+
+<footer>
+  <div class="brand"><span class="logo">🔥</span><span><b>CLÃ FÊNIX</b><small>Renasça mais forte.</small></span></div>
+  <p>Dados atualizados automaticamente. © <span id="year"></span> Clã Fênix.</p>
+</footer>
+
+<script src="/guerra.js"></script>
+</body>
+</html>

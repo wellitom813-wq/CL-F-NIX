@@ -16,18 +16,17 @@
   <a class="brand" href="#inicio"><span class="logo">🔥</span><span><b>CLÃ FÊNIX</b><small>Site Oficial</small></span></a>
   <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
   <nav id="menu">
-    <a href="#inicio">Início</a><a href="#membros">Membros</a><a href="#guerra">Guerra</a>
+    <a href="#inicio">Início</a><a href="#membros">Membros</a><a href="/guerra.html">Guerra ao Vivo</a>
     <a href="#ranking">Ranking</a><a href="#sorteios">Sorteios</a><a href="#recrutamento">Recrutamento</a>
   </nav>
 </header>
-
 <main>
 <section class="hero" id="inicio">
   <div class="hero-inner">
     <span class="eyebrow">🔥 UNIÃO • GUERRA • EVOLUÇÃO</span>
     <h1>RENASCEMOS<br><em>MAIS FORTES</em></h1>
     <p id="heroDesc">Bem-vindo ao site oficial do Clã Fênix. Dados do clã atualizados automaticamente.</p>
-    <div class="actions"><a class="btn primary" href="#recrutamento">Quero entrar</a><a class="btn ghost" href="#guerra">Ver guerra</a></div>
+    <div class="actions"><a class="btn primary" href="#recrutamento">Quero entrar</a><a class="btn ghost" href="/guerra.html">Ver guerra ao vivo</a></div>
     <div class="quick">
       <div><strong id="qMembers">--/--</strong><span>Membros</span></div>
       <div><strong id="qPoints">--</strong><span>Troféus</span></div>
@@ -35,11 +34,9 @@
     </div>
   </div>
 </section>
-
 <section class="wrap status-wrap">
   <div id="apiStatus" class="api-status loading"><span></span><b>Conectando à API oficial...</b></div>
 </section>
-
 <section class="wrap section">
   <div class="heading"><div><span class="eyebrow">VISÃO GERAL</span><h2 id="clanName">Clã Fênix</h2></div><span class="pill green">● ONLINE</span></div>
   <div class="grid four">
@@ -55,9 +52,8 @@
     <div><small>TROFÉUS MÍNIMOS</small><b id="requiredTrophies">--</b></div>
   </div>
 </section>
-
 <section class="wrap section" id="guerra">
-  <div class="heading"><div><span class="eyebrow">TEMPO REAL</span><h2>Guerra atual</h2></div><span id="warLive" class="pill red">CONSULTANDO</span></div>
+  <div class="heading"><div><span class="eyebrow">TEMPO REAL</span><h2>Guerra atual</h2></div><a class="btn ghost" href="/guerra.html">Abrir painel completo</a></div>
   <article class="card war" id="warCard">
     <div class="team"><div class="crest">🔥</div><h3 id="warClanName">FÊNIX</h3><strong id="clanStars">--</strong><span>estrelas</span><small id="clanDestruction">--% destruição</small></div>
     <div class="versus"><b>VS</b><div class="progress"><i id="warProgress"></i></div><small id="warState">Carregando...</small></div>
@@ -69,12 +65,10 @@
     <article class="card compact"><i>💥</i><div><small>Destruição</small><b id="warDestructionSmall">--</b></div></article>
   </div>
 </section>
-
 <section class="wrap section" id="membros">
   <div class="heading"><div><span class="eyebrow">EQUIPE</span><h2>Membros do clã</h2></div><input id="memberSearch" class="search" placeholder="Buscar jogador..."></div>
   <div id="members" class="grid four"></div>
 </section>
-
 <section class="wrap section" id="ranking">
   <div class="heading"><div><span class="eyebrow">DESTAQUES</span><h2>Ranking automático</h2></div></div>
   <div class="grid three">
@@ -83,7 +77,6 @@
     <article class="card ranking"><h3>⚔️ Ataques recebidos</h3><div id="rankReceived"></div></article>
   </div>
 </section>
-
 <section class="wrap section" id="sorteios">
   <div class="heading"><div><span class="eyebrow">COMUNIDADE</span><h2>Sorteios oficiais</h2></div></div>
   <div class="grid three">
@@ -92,7 +85,6 @@
     <article class="card prize"><i>💎</i><h3>Recompensas</h3><p>Destaques de temporada, Liga de Clãs e campanhas internas.</p><span>EM BREVE</span></article>
   </div>
 </section>
-
 <section class="wrap section" id="recrutamento">
   <article class="card recruit">
     <div><span class="eyebrow">RECRUTAMENTO</span><h2>Faça parte da Fênix</h2>
@@ -103,7 +95,6 @@
   </article>
 </section>
 </main>
-
 <footer><div class="brand"><span class="logo">🔥</span><span><b>CLÃ FÊNIX</b><small>Renasça mais forte.</small></span></div><p>© <span id="year"></span> Clã Fênix — comunidade independente de Clash of Clans.</p></footer>
 <script src="/script.js"></script>
 </body>
