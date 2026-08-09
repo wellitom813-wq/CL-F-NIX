@@ -3,14 +3,14 @@
     "id": 1,
     "cv": 18,
     "tipo": "Guerra",
-    "nome": "Guerra CV18 #01",
-    "descricao": "Base preparada para guerras e confrontos competitivos.",
-    "imagem": "assets/layouts/cv18-guerra-1.jpg",
-    "link": "",
+    "nome": "Base de Guerra CV18 #01",
+    "descricao": "Layout de guerra CV18 disponível para copiar diretamente no Clash of Clans.",
+    "imagem": "assets/layouts/cv18-guerra-01.jpg",
+    "link": "https://link.clashofclans.com/ar?action=OpenLayout&id=TH18%3AWB%3AAAAARgAAAAJKvndDRATN6RPHJ-MLNaxe",
     "tags": [
       "Guerra",
-      "Equilibrada",
-      "CV18"
+      "CV18",
+      "Layout Oficial"
     ],
     "destaque": true,
     "data": "2026-08-09"
