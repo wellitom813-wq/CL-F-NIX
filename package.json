@@ -1,6 +1,6 @@
 {
-  "name": "clan-fenix-site",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module"
+  "name":"cla-fenix-site",
+  "version":"2.0.0",
+  "private":true,
+  "type":"module"
 }

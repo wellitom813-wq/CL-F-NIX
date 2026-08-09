@@ -1,0 +1,48 @@
+CLÃ FÊNIX — VERSÃO 2.0 COM API
+
+ARQUIVOS PRINCIPAIS
+index.html
+style.css
+script.js
+api/clan.js
+api/war.js
+vercel.json
+package.json
+
+O QUE JÁ ESTÁ PRONTO
+- Visual responsivo para celular.
+- Dados gerais do clã pela API.
+- Lista de membros automática.
+- Ranking automático de troféus e doações.
+- Guerra atual automática.
+- Token escondido em variável de ambiente.
+- Modo demonstração caso a API ainda não esteja configurada.
+
+TAG CONFIGURADA
+#VJ8GGLR8
+
+COMO PUBLICAR
+1. Extraia este ZIP.
+2. Apague/substitua os arquivos antigos do repositório pelos arquivos desta pasta.
+3. Envie também a pasta "api".
+4. Faça o deploy normalmente na Vercel.
+
+CONFIGURAÇÃO NA VERCEL
+Project > Settings > Environment Variables
+
+Crie:
+COC_API_TOKEN = seu token da API do Clash of Clans
+COC_CLAN_TAG = #VJ8GGLR8
+
+Depois faça um Redeploy.
+
+IMPORTANTE SOBRE IP
+A API oficial do Clash of Clans usa chaves associadas a IPs permitidos. Em hospedagens serverless,
+o IP de saída pode não ser fixo. Se a API responder "accessDenied" / IP incorreto mesmo com o token
+certo, você precisará usar o backend com IP fixo que autorizar na sua chave da API, ou uma opção
+de infraestrutura com saída estática. O frontend deste ZIP já está pronto para os dados; nesse caso
+basta adaptar as funções /api/clan e /api/war para chamar seu backend fixo.
+
+SEGURANÇA
+Nunca coloque o token dentro de script.js, index.html ou em arquivos públicos do GitHub.
+Use somente Environment Variables na Vercel/backend.
