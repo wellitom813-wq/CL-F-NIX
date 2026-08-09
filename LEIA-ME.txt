@@ -1,27 +1,18 @@
-CLÃ FÊNIX — SITE PRONTO
+FENIX API - BACKEND
 
-ARQUIVOS
-- index.html
-- style.css
-- script.js
+1. Coloque server.js no GitHub.
+2. No servidor Vultr, entre em:
+   cd /var/www/fenix-api
 
-COMO USAR
-1. Extraia o ZIP.
-2. Envie os 3 arquivos para a raiz do seu repositório no GitHub.
-3. Na Vercel, importe esse repositório.
-4. Framework Preset: Other.
-5. Clique em Deploy.
+3. Baixe server.js do GitHub usando curl.
+4. Crie o arquivo .env no servidor com:
+   COC_CLAN_TAG=#VJ8GGLR8
+   COC_API_TOKEN=SEU_TOKEN
+   PORT=3000
 
-COMO EDITAR
-- Membros, cargos, CV, troféus, doações e estrelas:
-  abra script.js e altere a parte CONFIG.membros.
+5. Rode:
+   node server.js
 
-- WhatsApp:
-  abra script.js e altere:
-  whatsapp: "https://wa.me/5521967494580"
-
-- Textos, títulos, sorteios e guerra atual:
-  edite index.html.
-
-OBSERVAÇÃO
-Os dados atualmente são exemplos. A integração automática com a API do Clash of Clans exige um backend/servidor para proteger a chave da API e pode ser adicionada depois.
+IMPORTANTE:
+- Nunca coloque o token real no GitHub.
+- O token deve ficar apenas no arquivo .env do servidor.
