@@ -1,3 +1,7 @@
+[hidden] {
+  display: none !important;
+}
+
 .active-link{color:var(--orange)!important}
 .war-hero{padding:70px 0 34px;background:radial-gradient(circle at 50% 0,rgba(255,82,0,.18),transparent 44%)}
 .war-hero h1{font-size:clamp(42px,7vw,76px);line-height:.95;letter-spacing:-.055em;margin-top:13px}
