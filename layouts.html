@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <title>Layouts | Clã Fênix</title>
+  <meta name="description" content="Central de layouts do Clã Fênix para CV12 ao CV18.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/layouts.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><span class="logo">🔥</span><span><b>CLÃ FÊNIX</b><small>Central de Layouts</small></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+  <nav id="menu">
+    <a href="/">Início</a>
+    <a href="/guerra.html">Guerra ao Vivo</a>
+    <a class="active-link" href="/layouts.html">Layouts</a>
+    <a href="/#membros">Membros</a>
+    <a href="/#recrutamento">Recrutamento</a>
+  </nav>
+</header>
+
+<main>
+<section class="layouts-hero"><div class="wrap">
+  <span class="eyebrow">🏰 BASES • GUERRA • FARM • TROFÉUS</span>
+  <h1>CENTRAL DE <em>LAYOUTS</em></h1>
+  <p>Escolha seu CV, encontre a base ideal e abra o layout direto no Clash of Clans.</p>
+  <div class="layout-metrics">
+    <div><strong id="totalLayouts">0</strong><span>Layouts</span></div>
+    <div><strong>CV12–18</strong><span>Disponíveis</span></div>
+    <div><strong id="highlightCount">0</strong><span>Destaques</span></div>
+  </div>
+</div></section>
+
+<section class="wrap layouts-toolbar">
+  <div class="search-box"><span>🔎</span><input id="layoutSearch" type="search" placeholder="Buscar layout, CV ou categoria..."></div>
+
+  <div class="filter-block"><small>NÍVEL DA PREFEITURA</small><div class="filters" id="cvFilters">
+    <button class="filter-btn active" data-cv="all">Todos</button>
+    <button class="filter-btn" data-cv="12">CV12</button><button class="filter-btn" data-cv="13">CV13</button>
+    <button class="filter-btn" data-cv="14">CV14</button><button class="filter-btn" data-cv="15">CV15</button>
+    <button class="filter-btn" data-cv="16">CV16</button><button class="filter-btn" data-cv="17">CV17</button>
+    <button class="filter-btn" data-cv="18">CV18</button>
+  </div></div>
+
+  <div class="filter-block"><small>TIPO DE LAYOUT</small><div class="filters" id="typeFilters">
+    <button class="filter-btn active" data-type="all">Todos</button>
+    <button class="filter-btn" data-type="Guerra">⚔️ Guerra</button>
+    <button class="filter-btn" data-type="Anti-3">🛡️ Anti-3</button>
+    <button class="filter-btn" data-type="Troféus">🏆 Troféus</button>
+    <button class="filter-btn" data-type="Farm">🌾 Farm</button>
+  </div></div>
+
+  <div class="results-line">
+    <span id="resultsCount">Carregando layouts...</span>
+    <select id="sortSelect">
+      <option value="featured">Destaques primeiro</option>
+      <option value="newest">Mais recentes</option>
+      <option value="cv-desc">Maior CV</option>
+      <option value="cv-asc">Menor CV</option>
+      <option value="name">Nome A-Z</option>
+    </select>
+  </div>
+</section>
+
+<section class="wrap layouts-section">
+  <div id="layoutsGrid" class="layouts-grid"></div>
+  <div id="emptyState" class="layout-empty" hidden>
+    <div>🏰</div><h2>Nenhum layout encontrado</h2>
+    <p>Tente escolher outro CV, categoria ou termo de busca.</p>
+    <button id="clearFilters" class="layout-primary-btn">Limpar filtros</button>
+  </div>
+</section>
+
+<section class="wrap how-to">
+  <span class="eyebrow">COMO USAR</span><h2>Copie uma base em poucos segundos</h2>
+  <div class="how-grid">
+    <article><b>1</b><h3>Escolha o CV</h3><p>Use os filtros para encontrar layouts compatíveis.</p></article>
+    <article><b>2</b><h3>Abra o layout</h3><p>Toque em “Abrir no Clash”.</p></article>
+    <article><b>3</b><h3>Salve no jogo</h3><p>O Clash abrirá o link oficial da base.</p></article>
+  </div>
+</section>
+</main>
+
+<div class="toast" id="toast"></div>
+<footer><div class="brand"><span class="logo">🔥</span><span><b>CLÃ FÊNIX</b><small>Renasça mais forte.</small></span></div><p>© <span id="year"></span> Clã Fênix — Central de Layouts.</p></footer>
+<script src="/layouts.js"></script>
+</body>
+</html>

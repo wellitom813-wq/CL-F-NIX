@@ -1,0 +1,450 @@
+[
+  {
+    "id": 1,
+    "cv": 18,
+    "tipo": "Guerra",
+    "nome": "Guerra CV18 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv18-guerra-1.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV18"
+    ],
+    "destaque": true,
+    "data": "2026-08-09"
+  },
+  {
+    "id": 2,
+    "cv": 18,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV18 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv18-anti3-2.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV18"
+    ],
+    "destaque": true,
+    "data": "2026-08-09"
+  },
+  {
+    "id": 3,
+    "cv": 18,
+    "tipo": "Troféus",
+    "nome": "Troféus CV18 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv18-trofeus-3.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV18"
+    ],
+    "destaque": false,
+    "data": "2026-08-09"
+  },
+  {
+    "id": 4,
+    "cv": 18,
+    "tipo": "Farm",
+    "nome": "Farm CV18 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv18-farm-4.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV18"
+    ],
+    "destaque": false,
+    "data": "2026-08-09"
+  },
+  {
+    "id": 5,
+    "cv": 17,
+    "tipo": "Guerra",
+    "nome": "Guerra CV17 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv17-guerra-5.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV17"
+    ],
+    "destaque": true,
+    "data": "2026-08-08"
+  },
+  {
+    "id": 6,
+    "cv": 17,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV17 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv17-anti3-6.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV17"
+    ],
+    "destaque": true,
+    "data": "2026-08-08"
+  },
+  {
+    "id": 7,
+    "cv": 17,
+    "tipo": "Troféus",
+    "nome": "Troféus CV17 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv17-trofeus-7.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV17"
+    ],
+    "destaque": false,
+    "data": "2026-08-08"
+  },
+  {
+    "id": 8,
+    "cv": 17,
+    "tipo": "Farm",
+    "nome": "Farm CV17 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv17-farm-8.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV17"
+    ],
+    "destaque": false,
+    "data": "2026-08-08"
+  },
+  {
+    "id": 9,
+    "cv": 16,
+    "tipo": "Guerra",
+    "nome": "Guerra CV16 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv16-guerra-9.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV16"
+    ],
+    "destaque": false,
+    "data": "2026-08-07"
+  },
+  {
+    "id": 10,
+    "cv": 16,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV16 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv16-anti3-10.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV16"
+    ],
+    "destaque": false,
+    "data": "2026-08-07"
+  },
+  {
+    "id": 11,
+    "cv": 16,
+    "tipo": "Troféus",
+    "nome": "Troféus CV16 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv16-trofeus-11.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV16"
+    ],
+    "destaque": false,
+    "data": "2026-08-07"
+  },
+  {
+    "id": 12,
+    "cv": 16,
+    "tipo": "Farm",
+    "nome": "Farm CV16 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv16-farm-12.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV16"
+    ],
+    "destaque": false,
+    "data": "2026-08-07"
+  },
+  {
+    "id": 13,
+    "cv": 15,
+    "tipo": "Guerra",
+    "nome": "Guerra CV15 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv15-guerra-13.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV15"
+    ],
+    "destaque": false,
+    "data": "2026-08-06"
+  },
+  {
+    "id": 14,
+    "cv": 15,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV15 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv15-anti3-14.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV15"
+    ],
+    "destaque": false,
+    "data": "2026-08-06"
+  },
+  {
+    "id": 15,
+    "cv": 15,
+    "tipo": "Troféus",
+    "nome": "Troféus CV15 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv15-trofeus-15.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV15"
+    ],
+    "destaque": false,
+    "data": "2026-08-06"
+  },
+  {
+    "id": 16,
+    "cv": 15,
+    "tipo": "Farm",
+    "nome": "Farm CV15 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv15-farm-16.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV15"
+    ],
+    "destaque": false,
+    "data": "2026-08-06"
+  },
+  {
+    "id": 17,
+    "cv": 14,
+    "tipo": "Guerra",
+    "nome": "Guerra CV14 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv14-guerra-17.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV14"
+    ],
+    "destaque": false,
+    "data": "2026-08-05"
+  },
+  {
+    "id": 18,
+    "cv": 14,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV14 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv14-anti3-18.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV14"
+    ],
+    "destaque": false,
+    "data": "2026-08-05"
+  },
+  {
+    "id": 19,
+    "cv": 14,
+    "tipo": "Troféus",
+    "nome": "Troféus CV14 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv14-trofeus-19.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV14"
+    ],
+    "destaque": false,
+    "data": "2026-08-05"
+  },
+  {
+    "id": 20,
+    "cv": 14,
+    "tipo": "Farm",
+    "nome": "Farm CV14 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv14-farm-20.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV14"
+    ],
+    "destaque": false,
+    "data": "2026-08-05"
+  },
+  {
+    "id": 21,
+    "cv": 13,
+    "tipo": "Guerra",
+    "nome": "Guerra CV13 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv13-guerra-21.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV13"
+    ],
+    "destaque": false,
+    "data": "2026-08-04"
+  },
+  {
+    "id": 22,
+    "cv": 13,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV13 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv13-anti3-22.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV13"
+    ],
+    "destaque": false,
+    "data": "2026-08-04"
+  },
+  {
+    "id": 23,
+    "cv": 13,
+    "tipo": "Troféus",
+    "nome": "Troféus CV13 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv13-trofeus-23.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV13"
+    ],
+    "destaque": false,
+    "data": "2026-08-04"
+  },
+  {
+    "id": 24,
+    "cv": 13,
+    "tipo": "Farm",
+    "nome": "Farm CV13 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv13-farm-24.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV13"
+    ],
+    "destaque": false,
+    "data": "2026-08-04"
+  },
+  {
+    "id": 25,
+    "cv": 12,
+    "tipo": "Guerra",
+    "nome": "Guerra CV12 #01",
+    "descricao": "Base preparada para guerras e confrontos competitivos.",
+    "imagem": "assets/layouts/cv12-guerra-25.jpg",
+    "link": "",
+    "tags": [
+      "Guerra",
+      "Equilibrada",
+      "CV12"
+    ],
+    "destaque": false,
+    "data": "2026-08-03"
+  },
+  {
+    "id": 26,
+    "cv": 12,
+    "tipo": "Anti-3",
+    "nome": "Anti-3 CV12 #02",
+    "descricao": "Estrutura focada em dificultar ataques de três estrelas.",
+    "imagem": "assets/layouts/cv12-anti3-26.jpg",
+    "link": "",
+    "tags": [
+      "Anti-3",
+      "Defesa",
+      "CV12"
+    ],
+    "destaque": false,
+    "data": "2026-08-03"
+  },
+  {
+    "id": 27,
+    "cv": 12,
+    "tipo": "Troféus",
+    "nome": "Troféus CV12 #03",
+    "descricao": "Layout pensado para proteger troféus e dificultar porcentagem alta.",
+    "imagem": "assets/layouts/cv12-trofeus-27.jpg",
+    "link": "",
+    "tags": [
+      "Push",
+      "Troféus",
+      "CV12"
+    ],
+    "destaque": false,
+    "data": "2026-08-03"
+  },
+  {
+    "id": 28,
+    "cv": 12,
+    "tipo": "Farm",
+    "nome": "Farm CV12 #04",
+    "descricao": "Base voltada para proteger recursos no dia a dia.",
+    "imagem": "assets/layouts/cv12-farm-28.jpg",
+    "link": "",
+    "tags": [
+      "Farm",
+      "Recursos",
+      "CV12"
+    ],
+    "destaque": false,
+    "data": "2026-08-03"
+  }
+]

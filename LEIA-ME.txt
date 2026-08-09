@@ -1,28 +1,43 @@
-CLÃ FÊNIX — GUERRA AO VIVO
+CLÃ FÊNIX — CENTRAL DE LAYOUTS
 
-Envie/substitua estes arquivos na RAIZ do repositório GitHub:
+Coloque na RAIZ do GitHub:
+- layouts.html
+- layouts.css
+- layouts.js
+- layouts.json
 
-1. guerra.html       (novo)
-2. guerra.css        (novo)
-3. guerra.js         (novo)
-4. index.html        (substituir o atual)
+Crie também a pasta:
+assets/layouts/
 
-NÃO ALTERE:
-- script.js
-- style.css
-- api/clan.js
-- api/war.js
-- servidor Vultr
-- token
+Depois abra:
+https://cl-f-nix.vercel.app/layouts.html
 
-Depois que a Vercel terminar o deploy, abra:
-https://cl-f-nix.vercel.app/guerra.html
+O pacote já vem com 28 registros de exemplo, cobrindo CV12 a CV18 e os tipos:
+Guerra, Anti-3, Troféus e Farm.
 
-A página:
-- consulta /api/war;
-- atualiza automaticamente a cada 30 segundos;
-- mostra placar e destruição;
-- calcula ataques usados e restantes;
-- mostra cronômetro;
-- mostra ataques da Fênix;
-- mostra desempenho individual dos participantes.
+PARA ADICIONAR UM LAYOUT REAL
+1. Coloque a imagem em assets/layouts/
+2. Abra layouts.json
+3. Edite uma entrada ou copie uma existente.
+4. Preencha o campo link com o link oficial de compartilhamento do Clash of Clans.
+
+Exemplo:
+{
+  "id": 101,
+  "cv": 18,
+  "tipo": "Guerra",
+  "nome": "Anti-3 Estrelas #101",
+  "descricao": "Base de guerra CV18.",
+  "imagem": "assets/layouts/cv18-101.jpg",
+  "link": "https://link.clashofclans.com/...",
+  "tags": ["Guerra", "Anti-3", "CV18"],
+  "destaque": true,
+  "data": "2026-08-09"
+}
+
+Se a imagem não existir, a página mostra um placeholder bonito.
+Se o link estiver vazio, o botão fica como 'Link em breve'.
+Não precisa mexer na Vultr, PM2, token ou API.
+
+Para adicionar ao menu da página inicial:
+<a href="/layouts.html">Layouts</a>

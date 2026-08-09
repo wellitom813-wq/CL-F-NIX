@@ -1,262 +1,83 @@
-const BASE = "https://clashofclans-layouts.com";
-
-const UA =
-  "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 " +
-  "(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36";
-
-function decodeHtml(text = "") {
-  return text
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
-    .trim();
-}
-
-function absoluteUrl(url) {
-  if (!url) return "";
-  if (url.startsWith("http://") || url.startsWith("https://")) return url;
-  if (url.startsWith("//")) return "https:" + url;
-  if (url.startsWith("/")) return BASE + url;
-  return BASE + "/" + url;
-}
-
-function firstMatch(html, regex) {
-  const m = html.match(regex);
-  return m ? decodeHtml(m[1]) : "";
-}
-
-function extractMaxPage(html) {
-  const nums = [...html.matchAll(/\/page_(\d+)\//g)]
-    .map(m => Number(m[1]))
-    .filter(Number.isFinite);
-
-  return nums.length ? Math.max(1, ...nums) : 1;
-}
-
-function extractDetailPaths(html, cv) {
-  const re = new RegExp(
-    `href=["']([^"']*\\/pt\\/plans\\/th_${cv}\\/(?:war|farm|defence|troll|hybrid|anti[^/"']*)_[0-9]+\\.html)["']`,
-    "gi"
-  );
-
-  const result = [];
-  const seen = new Set();
-
-  for (const m of html.matchAll(re)) {
-    let path = m[1];
-
-    if (path.startsWith("http")) {
-      try {
-        path = new URL(path).pathname;
-      } catch {}
-    }
-
-    if (!seen.has(path)) {
-      seen.add(path);
-      result.push(path);
-    }
-  }
-
-  // Fallback mais amplo caso o site altere as categorias/estrutura.
-  if (!result.length) {
-    const broad = new RegExp(
-      `href=["']([^"']*\\/pt\\/plans\\/th_${cv}\\/[^"'?#]+_[0-9]+\\.html)["']`,
-      "gi"
-    );
-
-    for (const m of html.matchAll(broad)) {
-      let path = m[1];
-
-      if (path.startsWith("http")) {
-        try {
-          path = new URL(path).pathname;
-        } catch {}
-      }
-
-      if (!seen.has(path)) {
-        seen.add(path);
-        result.push(path);
-      }
-    }
-  }
-
-  return result;
-}
-
-function inferType(path, title) {
-  const text = `${path} ${title}`.toLowerCase();
-
-  if (text.includes("/war_") || text.includes("guerra")) return "guerra";
-  if (text.includes("/farm_") || text.includes("farm")) return "farm";
-  if (text.includes("/defence_") || text.includes("defesa")) return "defesa";
-  if (text.includes("/troll_") || text.includes("troll") || text.includes("funny")) return "troll";
-  if (text.includes("hybrid") || text.includes("híbrido")) return "hibrido";
-  return "outros";
-}
-
-async function fetchHtml(url) {
-  const response = await fetch(url, {
-    headers: {
-      "User-Agent": UA,
-      "Accept":
-        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-      "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.7"
-    },
-    redirect: "follow"
+const $=id=>document.getElementById(id);
+const state={layouts:[],cv:"all",type:"all",query:"",sort:"featured"};
+$("year").textContent=new Date().getFullYear();
+$("menuBtn").onclick=()=>$("menu").classList.toggle("open");
+document.querySelectorAll("nav a").forEach(a=>a.onclick=()=>$("menu").classList.remove("open"));
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+function toast(m){const e=$("toast");e.textContent=m;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),1800)}
+const valid=l=>/^https?:\/\//i.test(l||"");
+function filtered(){
+  const q=norm(state.query);
+  let d=state.layouts.filter(x=>{
+    const cv=state.cv==="all"||String(x.cv)===state.cv;
+    const ty=state.type==="all"||x.tipo===state.type;
+    const hay=norm([x.nome,x.tipo,`cv${x.cv}`,...(x.tags||[])].join(" "));
+    return cv&&ty&&(!q||hay.includes(q));
   });
-
-  if (!response.ok) {
-    throw new Error(`Fonte respondeu ${response.status}`);
-  }
-
-  return response.text();
+  d.sort((a,b)=>{
+    if(state.sort==="featured")return Number(!!b.destaque)-Number(!!a.destaque)||(b.data||"").localeCompare(a.data||"");
+    if(state.sort==="newest")return (b.data||"").localeCompare(a.data||"");
+    if(state.sort==="cv-desc")return +b.cv-+a.cv;
+    if(state.sort==="cv-asc")return +a.cv-+b.cv;
+    if(state.sort==="name")return String(a.nome).localeCompare(String(b.nome),"pt-BR");
+    return 0;
+  });
+  return d;
 }
-
-async function parseDetail(path, cv) {
-  const sourceUrl = absoluteUrl(path);
-
-  try {
-    const html = await fetchHtml(sourceUrl);
-
-    const h1 =
-      firstMatch(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i)
-        .replace(/<[^>]+>/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-
-    const pageTitle =
-      firstMatch(html, /<title[^>]*>([\s\S]*?)<\/title>/i)
-        .replace(/\s+/g, " ")
-        .trim();
-
-    const title = h1 || pageTitle || `Layout CV${cv}`;
-
-    const authorPatterns = [
-      /Base criada por:\s*<\/[^>]+>\s*<[^>]+>([^<]+)/i,
-      /Base criada por:\s*([^<\n]+)/i,
-      /Base criada por[^>]*>\s*([^<]+)/i,
-      /created by:\s*([^<\n]+)/i
-    ];
-
-    let author = "";
-    for (const p of authorPatterns) {
-      author = firstMatch(html, p);
-      if (author) break;
-    }
-
-    const clashLink =
-      firstMatch(
-        html,
-        /href=["'](https:\/\/link\.clashofclans\.com\/[^"']+)["'][^>]*>/i
-      );
-
-    const ogImage =
-      firstMatch(
-        html,
-        /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i
-      ) ||
-      firstMatch(
-        html,
-        /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i
-      );
-
-    const twitterImage =
-      firstMatch(
-        html,
-        /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i
-      );
-
-    // Primeiro <img> que pareça base/layout, como fallback.
-    let image = ogImage || twitterImage;
-    if (!image) {
-      const imgCandidates = [...html.matchAll(/<img[^>]+src=["']([^"']+)["'][^>]*>/gi)]
-        .map(m => m[1])
-        .filter(src => /plan|base|layout|th_|town/i.test(src));
-
-      image = imgCandidates[0] || "";
-    }
-
-    const id =
-      firstMatch(title, /\(#?(\d+)\)/i) ||
-      firstMatch(path, /_(\d+)\.html$/i);
-
-    return {
-      cv: Number(cv),
-      id: id ? `#${id}` : "",
-      title,
-      author: author || "Comunidade",
-      type: inferType(path, title),
-      sourceUrl,
-      clashLink: clashLink ? decodeHtml(clashLink) : sourceUrl,
-      image: absoluteUrl(decodeHtml(image))
-    };
-  } catch (error) {
-    const id = firstMatch(path, /_(\d+)\.html$/i);
-
-    return {
-      cv: Number(cv),
-      id: id ? `#${id}` : "",
-      title: `Layout CV${cv} ${id ? "#" + id : ""}`.trim(),
-      author: "Comunidade",
-      type: inferType(path, ""),
-      sourceUrl,
-      clashLink: sourceUrl,
-      image: "",
-      partial: true
-    };
+function icon(t){return {"Guerra":"⚔️","Anti-3":"🛡️","Troféus":"🏆","Farm":"🌾"}[t]||"🏰"}
+function render(){
+  const d=filtered();
+  $("resultsCount").textContent=`${d.length} layout${d.length===1?"":"s"} encontrado${d.length===1?"":"s"}`;
+  $("emptyState").hidden=d.length>0;
+  $("layoutsGrid").innerHTML=d.map(x=>{
+    const ok=valid(x.link);
+    const img=x.imagem?`<img src="${esc(x.imagem)}" alt="${esc(x.nome)}" loading="lazy" onerror="this.classList.add('broken')">`:"";
+    const tags=(x.tags||[]).map(t=>`<span>${esc(t)}</span>`).join("");
+    return `<article class="layout-card">
+      <div class="layout-media">${img}
+        <div class="layout-placeholder"><div><span>🏰</span><b>CV${x.cv} • ${esc(x.tipo)}</b></div></div>
+        <div class="layout-badges"><span class="layout-cv">CV${x.cv}</span>${x.destaque?`<span class="layout-featured">🔥 DESTAQUE</span>`:""}</div>
+      </div>
+      <div class="layout-body">
+        <span class="layout-type">${icon(x.tipo)} ${esc(x.tipo)}</span>
+        <h3>${esc(x.nome)}</h3>
+        <p class="layout-description">${esc(x.descricao||"Layout selecionado para a Central Fênix.")}</p>
+        <div class="layout-tags">${tags}</div>
+        <div class="layout-actions">
+          <a class="layout-open-btn ${ok?"":"disabled"}" ${ok?`href="${esc(x.link)}" target="_blank" rel="noopener"`:""}>${ok?"🔥 Abrir no Clash":"Link em breve"}</a>
+          <button class="layout-copy-btn" data-copy="${esc(x.link||"")}">🔗</button>
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+  document.querySelectorAll(".layout-copy-btn").forEach(b=>b.onclick=async()=>{
+    const l=b.dataset.copy;if(!valid(l))return toast("Este layout ainda não possui link.");
+    try{await navigator.clipboard.writeText(l);toast("Link do layout copiado!")}catch{toast("Abra o layout e copie pelo navegador.")}
+  });
+}
+function reset(){
+  state.cv="all";state.type="all";state.query="";$("layoutSearch").value="";
+  document.querySelectorAll("[data-cv]").forEach(b=>b.classList.toggle("active",b.dataset.cv==="all"));
+  document.querySelectorAll("[data-type]").forEach(b=>b.classList.toggle("active",b.dataset.type==="all"));
+  render();
+}
+document.querySelectorAll("[data-cv]").forEach(b=>b.onclick=()=>{state.cv=b.dataset.cv;document.querySelectorAll("[data-cv]").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()});
+document.querySelectorAll("[data-type]").forEach(b=>b.onclick=()=>{state.type=b.dataset.type;document.querySelectorAll("[data-type]").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()});
+$("layoutSearch").addEventListener("input",e=>{state.query=e.target.value;render()});
+$("sortSelect").addEventListener("change",e=>{state.sort=e.target.value;render()});
+$("clearFilters").onclick=reset;
+async function load(){
+  try{
+    const r=await fetch(`/layouts.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!r.ok)throw new Error("Não foi possível carregar layouts.json");
+    const data=await r.json();state.layouts=Array.isArray(data)?data:[];
+    $("totalLayouts").textContent=state.layouts.length;
+    $("highlightCount").textContent=state.layouts.filter(x=>x.destaque).length;
+    render();
+  }catch(e){
+    $("resultsCount").textContent="Erro ao carregar layouts";
+    $("layoutsGrid").innerHTML=`<div class="layout-empty"><div>⚠️</div><h2>Falha ao carregar</h2><p>${esc(e.message)}</p></div>`;
   }
 }
-
-export default async function handler(req, res) {
-  try {
-    const cv = Number(req.query.cv || 18);
-    const page = Math.max(1, Number(req.query.page || 1));
-
-    if (!Number.isInteger(cv) || cv < 12 || cv > 18) {
-      return res.status(400).json({
-        error: "CV inválido. Use um número entre 12 e 18."
-      });
-    }
-
-    const listingUrl =
-      page === 1
-        ? `${BASE}/pt/plans/th_${cv}/`
-        : `${BASE}/pt/plans/th_${cv}/page_${page}/`;
-
-    const listingHtml = await fetchHtml(listingUrl);
-    const maxPage = extractMaxPage(listingHtml);
-    const paths = extractDetailPaths(listingHtml, cv);
-
-    // Normalmente há cerca de 12 layouts por página.
-    const items = await Promise.all(
-      paths.slice(0, 20).map(path => parseDetail(path, cv))
-    );
-
-    res.setHeader(
-      "Cache-Control",
-      "s-maxage=1800, stale-while-revalidate=86400"
-    );
-
-    return res.status(200).json({
-      cv,
-      page,
-      maxPage,
-      count: items.length,
-      source: listingUrl,
-      items
-    });
-  } catch (error) {
-    console.error(error);
-
-    return res.status(502).json({
-      error:
-        "Não foi possível carregar os layouts da fonte pública neste momento.",
-      details: error.message
-    });
-  }
-}
+load();
