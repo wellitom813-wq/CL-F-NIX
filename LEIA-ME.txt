@@ -1,18 +1,18 @@
-FENIX API - BACKEND
+CLÃ FÊNIX — CONEXÃO VERCEL → VULTR
 
-1. Coloque server.js no GitHub.
-2. No servidor Vultr, entre em:
-   cd /var/www/fenix-api
+Substitua apenas:
+api/clan.js
+api/war.js
 
-3. Baixe server.js do GitHub usando curl.
-4. Crie o arquivo .env no servidor com:
-   COC_CLAN_TAG=#VJ8GGLR8
-   COC_API_TOKEN=SEU_TOKEN
-   PORT=3000
+Não altere script.js.
 
-5. Rode:
-   node server.js
+Fluxo:
+Visitante -> Vercel -> /api/clan ou /api/war -> Vultr -> Clash of Clans
 
-IMPORTANTE:
-- Nunca coloque o token real no GitHub.
-- O token deve ficar apenas no arquivo .env do servidor.
+O token do Clash of Clans continua somente no servidor Vultr.
+Não é mais necessário colocar COC_API_TOKEN na Vercel.
+
+Depois de enviar os dois arquivos ao GitHub:
+1. Aguarde a Vercel fazer o deploy automático.
+2. Abra https://cl-f-nix.vercel.app/api/clan
+3. Se aparecer o JSON do Fênix, a ligação está pronta.
