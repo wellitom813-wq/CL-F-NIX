@@ -1,0 +1,27 @@
+CLÃ FÊNIX — SITE PRONTO
+
+ARQUIVOS
+- index.html
+- style.css
+- script.js
+
+COMO USAR
+1. Extraia o ZIP.
+2. Envie os 3 arquivos para a raiz do seu repositório no GitHub.
+3. Na Vercel, importe esse repositório.
+4. Framework Preset: Other.
+5. Clique em Deploy.
+
+COMO EDITAR
+- Membros, cargos, CV, troféus, doações e estrelas:
+  abra script.js e altere a parte CONFIG.membros.
+
+- WhatsApp:
+  abra script.js e altere:
+  whatsapp: "https://wa.me/5521967494580"
+
+- Textos, títulos, sorteios e guerra atual:
+  edite index.html.
+
+OBSERVAÇÃO
+Os dados atualmente são exemplos. A integração automática com a API do Clash of Clans exige um backend/servidor para proteger a chave da API e pode ser adicionada depois.

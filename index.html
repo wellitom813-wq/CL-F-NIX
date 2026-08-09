@@ -1,293 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site oficial do Clã Fênix - Clash of Clans">
-  <meta name="theme-color" content="#090909">
-  <title>Clã Fênix | Clash of Clans</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+  <meta name="description" content="Site oficial do Clã Fênix - Clash of Clans." />
+  <title>Clã Fênix | Site Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header class="topo">
-  <div class="topo-conteudo">
-    <a href="#inicio" class="marca">
-      <div class="marca-icone">🔥</div>
-      <div>
-        <h1 id="nomeTopo">CLÃ FÊNIX</h1>
-        <p id="tagTopo">#VJ8GGLR8</p>
-      </div>
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <span class="logo">🔥</span>
+      <span><b>CLÃ FÊNIX</b><small>Site Oficial</small></span>
     </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    <button id="menuBtn" class="menu-btn" aria-label="Abrir menu">☰</button>
 
-    <nav class="menu" id="menu">
+    <nav id="menu">
       <a href="#inicio">Início</a>
-      <a href="#guerra">Guerra</a>
-      <a href="#ranking">Ranking</a>
       <a href="#membros">Membros</a>
-      <a href="#layouts">Layouts</a>
+      <a href="#guerras">Guerras</a>
+      <a href="#ranking">Ranking</a>
       <a href="#sorteios">Sorteios</a>
       <a href="#recrutamento">Recrutamento</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <span class="kicker">🔥 UNIÃO • GUERRA • EVOLUÇÃO</span>
+        <h1>RENASCEMOS<br><em>MAIS FORTES</em></h1>
+        <p>Bem-vindo ao site oficial do Clã Fênix. Acompanhe membros, guerras, rankings, sorteios e novidades.</p>
+        <div class="actions">
+          <a href="#recrutamento" class="btn primary">Quero entrar no clã</a>
+          <a href="#guerras" class="btn secondary">Ver guerras</a>
+        </div>
 
-<section id="inicio" class="hero">
-  <div class="hero-conteudo">
-    <span class="tag-destaque">🔥 SITE OFICIAL</span>
+        <div class="mini-stats">
+          <div><strong id="heroMembers">47/50</strong><span>Membros</span></div>
+          <div><strong id="heroTrophies">45.280</strong><span>Troféus</span></div>
+          <div><strong id="heroWins">126</strong><span>Vitórias</span></div>
+        </div>
+      </div>
+    </section>
 
-    <h2>
-      RENASÇA.<br>
-      LUTE.<br>
-      <strong>VENÇA.</strong>
-    </h2>
+    <section class="section">
+      <div class="section-title">
+        <div><span class="kicker">VISÃO GERAL</span><h2>Clã Fênix</h2></div>
+        <span class="online">● ONLINE</span>
+      </div>
 
-    <p id="descricaoClan">
-      Organização, guerra, evolução e espírito de equipe. Bem-vindo ao portal oficial do Clã Fênix.
-    </p>
+      <div class="grid stats">
+        <article class="card"><span>🛡️</span><small>Nível do clã</small><strong>25</strong><p>Experiência e tradição</p></article>
+        <article class="card"><span>👥</span><small>Membros</small><strong>47/50</strong><p>3 vagas disponíveis</p></article>
+        <article class="card"><span>🏆</span><small>Troféus</small><strong>45.280</strong><p>Classificação do clã</p></article>
+        <article class="card"><span>⚔️</span><small>Guerras vencidas</small><strong>126</strong><p>Histórico oficial</p></article>
+      </div>
+    </section>
 
-    <div class="hero-botoes">
-      <a href="#membros" class="btn btn-principal">Ver membros</a>
-      <a href="#guerra" class="btn btn-secundario">Guerra atual</a>
+    <section class="section" id="guerras">
+      <div class="section-title">
+        <div><span class="kicker">GUERRA ATUAL</span><h2>Fênix vs Adversário</h2></div>
+        <span class="live">AO VIVO</span>
+      </div>
+
+      <div class="war card">
+        <div class="team"><div class="badge">🔥</div><h3>FÊNIX</h3><strong>76</strong><span>estrelas</span></div>
+        <div class="vs"><b>VS</b><div class="bar"><i></i></div><small>Termina em breve</small></div>
+        <div class="team"><div class="badge dark">⚔️</div><h3>ADVERSÁRIO</h3><strong>69</strong><span>estrelas</span></div>
+      </div>
+
+      <div class="grid war-info">
+        <article class="card"><span>⚔️</span><div><small>Ataques usados</small><strong>42 / 50</strong></div></article>
+        <article class="card"><span>💥</span><div><small>Destruição</small><strong>93,8%</strong></div></article>
+        <article class="card"><span>⭐</span><div><small>Triplas</small><strong>21</strong></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="membros">
+      <div class="section-title">
+        <div><span class="kicker">NOSSA EQUIPE</span><h2>Membros em destaque</h2></div>
+      </div>
+      <div id="members" class="grid members"></div>
+    </section>
+
+    <section class="section" id="ranking">
+      <div class="section-title">
+        <div><span class="kicker">DESTAQUES</span><h2>Ranking do clã</h2></div>
+      </div>
+      <div class="grid rankings">
+        <article class="card rank-card"><h3>🏆 Mais troféus</h3><div id="rankTrophies"></div></article>
+        <article class="card rank-card"><h3>🎁 Mais doações</h3><div id="rankDonations"></div></article>
+        <article class="card rank-card"><h3>⭐ Estrelas em guerra</h3><div id="rankStars"></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <div><span class="kicker">HISTÓRICO</span><h2>Últimas guerras</h2></div>
+      </div>
+      <div class="card history">
+        <div><span class="result win">VITÓRIA</span><b>FÊNIX</b><span>75 ⭐</span><span>68 ⭐</span><b>Dark Warriors</b></div>
+        <div><span class="result win">VITÓRIA</span><b>FÊNIX</b><span>72 ⭐</span><span>71 ⭐</span><b>Brazil Kings</b></div>
+        <div><span class="result draw">EMPATE</span><b>FÊNIX</b><span>74 ⭐</span><span>74 ⭐</span><b>Legends BR</b></div>
+      </div>
+    </section>
+
+    <section class="section" id="sorteios">
+      <div class="section-title">
+        <div><span class="kicker">PRÊMIOS</span><h2>Sorteios oficiais</h2></div>
+      </div>
+      <div class="grid prizes">
+        <article class="card prize"><span>🎟️</span><h3>Bilhete Dourado</h3><p>Participe das ações oficiais e concorra a premiações para sua vila.</p><small>PRÓXIMO SORTEIO</small></article>
+        <article class="card prize"><span>🏞️</span><h3>Paisagens</h3><p>Premiações especiais em eventos, ligas e campanhas internas.</p><small>EVENTO ESPECIAL</small></article>
+        <article class="card prize"><span>💎</span><h3>Recompensas</h3><p>Benefícios para membros ativos e destaques da temporada.</p><small>EM BREVE</small></article>
+      </div>
+    </section>
+
+    <section class="section" id="recrutamento">
+      <div class="recruit card">
+        <div>
+          <span class="kicker">RECRUTAMENTO</span>
+          <h2>Quer fazer parte da Fênix?</h2>
+          <p>Procuramos jogadores ativos e comprometidos com guerra, Liga de Clãs, Jogos do Clã e evolução em equipe.</p>
+          <div class="checks">
+            <span>✓ CV17 e CV18 bem evoluídos</span>
+            <span>✓ Ativo em guerras e CWL</span>
+            <span>✓ Compromisso com os ataques</span>
+            <span>✓ Respeito e espírito de equipe</span>
+          </div>
+        </div>
+        <div class="recruit-side">
+          <div class="fire-big">🔥</div>
+          <a id="joinBtn" class="btn primary" href="#">Entrar em contato</a>
+          <small>Edite o link do botão no arquivo script.js.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand">
+      <span class="logo">🔥</span>
+      <span><b>CLÃ FÊNIX</b><small>Renasça mais forte.</small></span>
     </div>
-  </div>
+    <p>© <span id="year"></span> Clã Fênix. Projeto independente para comunidade de Clash of Clans.</p>
+  </footer>
 
-  <div class="hero-fenix">🦅</div>
-</section>
-
-<section class="estatisticas">
-  <article class="stat">
-    <span>👥</span>
-    <div>
-      <strong id="statMembros">--</strong>
-      <small>Membros</small>
-    </div>
-  </article>
-
-  <article class="stat">
-    <span>⭐</span>
-    <div>
-      <strong id="statNivel">--</strong>
-      <small>Nível do Clã</small>
-    </div>
-  </article>
-
-  <article class="stat">
-    <span>🏆</span>
-    <div>
-      <strong id="statPontos">--</strong>
-      <small>Pontos do Clã</small>
-    </div>
-  </article>
-
-  <article class="stat">
-    <span>⚔️</span>
-    <div>
-      <strong id="statVitorias">--</strong>
-      <small>Vitórias em guerra</small>
-    </div>
-  </article>
-
-  <article class="stat">
-    <span>🔥</span>
-    <div>
-      <strong id="statSequencia">--</strong>
-      <small>Sequência</small>
-    </div>
-  </article>
-
-  <article class="stat">
-    <span>🏅</span>
-    <div>
-      <strong id="statLiga">--</strong>
-      <small>Liga de Guerra</small>
-    </div>
-  </article>
-</section>
-
-<section id="guerra" class="secao">
-  <div class="secao-titulo">
-    <span>ATUALIZAÇÃO MANUAL</span>
-    <h2>⚔️ Guerra Atual</h2>
-    <p>Edite os dados diretamente no arquivo <strong>script.js</strong>.</p>
-  </div>
-
-  <div id="guerraCard" class="guerra-card">
-    <div class="cla-lado">
-      <div class="escudo">🔥</div>
-      <h3 id="nomeFenix">FÊNIX</h3>
-      <strong id="estrelasFenix">-- ⭐</strong>
-      <span id="destruicaoFenix">--% destruição</span>
-    </div>
-
-    <div class="versus">
-      <span>VS</span>
-      <strong id="estadoGuerra">Em guerra</strong>
-      <small id="tempoGuerra">--</small>
-    </div>
-
-    <div class="cla-lado">
-      <div class="escudo rival">🛡️</div>
-      <h3 id="nomeAdversario">Adversário</h3>
-      <strong id="estrelasRival">-- ⭐</strong>
-      <span id="destruicaoRival">--% destruição</span>
-    </div>
-  </div>
-</section>
-
-<section id="ranking" class="secao">
-  <div class="secao-titulo">
-    <span>POSIÇÃO NO CLÃ</span>
-    <h2>🏆 Ranking do Clã</h2>
-    <p>Posições dos membros conforme os dados enviados.</p>
-  </div>
-
-  <div id="rankingLista" class="ranking"></div>
-</section>
-
-<section id="membros" class="secao">
-  <div class="secao-titulo">
-    <span>EQUIPE FÊNIX</span>
-    <h2>👥 Membros</h2>
-    <p>Líder, colíderes, anciãos e membros com CV, BC, nível e posição.</p>
-  </div>
-
-  <div class="filtros">
-    <button class="filtro ativo" data-cargo="todos">Todos</button>
-    <button class="filtro" data-cargo="Líder">Líder</button>
-    <button class="filtro" data-cargo="Colíder">Colíderes</button>
-    <button class="filtro" data-cargo="Ancião">Anciãos</button>
-    <button class="filtro" data-cargo="Membro">Membros</button>
-  </div>
-
-  <div id="membrosGrid" class="membros-grid"></div>
-</section>
-
-<section id="layouts" class="secao">
-  <div class="secao-titulo">
-    <span>BIBLIOTECA COMPLETA</span>
-    <h2>🛡️ Layouts</h2>
-    <p>
-      Catálogo CV12–CV18 carregado da coleção pública de layouts.
-      Escolha o CV, a categoria e navegue pelas páginas.
-    </p>
-  </div>
-
-  <div class="layout-cv-tabs">
-    <button class="layout-cv-btn" data-cv="12">CV12</button>
-    <button class="layout-cv-btn" data-cv="13">CV13</button>
-    <button class="layout-cv-btn" data-cv="14">CV14</button>
-    <button class="layout-cv-btn" data-cv="15">CV15</button>
-    <button class="layout-cv-btn" data-cv="16">CV16</button>
-    <button class="layout-cv-btn" data-cv="17">CV17</button>
-    <button class="layout-cv-btn ativo" data-cv="18">CV18</button>
-  </div>
-
-  <div class="layout-filtros">
-    <button class="layout-filtro ativo" data-tipo="todos">Todos</button>
-    <button class="layout-filtro" data-tipo="guerra">⚔️ Guerra</button>
-    <button class="layout-filtro" data-tipo="farm">🌾 Farm</button>
-    <button class="layout-filtro" data-tipo="defesa">🛡️ Defesa</button>
-    <button class="layout-filtro" data-tipo="hibrido">🔀 Híbrido</button>
-    <button class="layout-filtro" data-tipo="troll">😄 Troll</button>
-    <button class="layout-filtro" data-tipo="outros">✨ Outros</button>
-  </div>
-
-  <div class="layout-barra">
-    <div>
-      <span>CATÁLOGO ONLINE</span>
-      <h3 id="tituloLayoutsAtivos">Layouts CV18</h3>
-    </div>
-
-    <div class="layout-contadores">
-      <strong id="quantidadeLayouts">Carregando...</strong>
-      <small id="paginaLayouts">Página 1</small>
-    </div>
-  </div>
-
-  <div id="layoutStatus" class="layout-status">
-    <div class="layout-spinner"></div>
-    <span>Carregando layouts...</span>
-  </div>
-
-  <div id="layoutsGrid" class="layouts-grid"></div>
-
-  <div id="layoutPaginacao" class="layout-paginacao"></div>
-
-  <p class="layout-fonte-aviso">
-    Fonte: clashofclans-layouts.com. Este portal não é oficial nem aprovado pela Supercell.
-    O Clã Fênix apenas organiza links públicos para facilitar o acesso aos layouts.
-  </p>
-</section>
-
-<section id="sorteios" class="secao">
-  <div class="secao-titulo">
-    <span>PREMIAÇÕES</span>
-    <h2>🎁 Sorteios Oficiais</h2>
-    <p>Prêmios e eventos do Clã Fênix.</p>
-  </div>
-
-  <div class="premios-grid">
-    <article class="premio">
-      <span>🎟️</span>
-      <h3>Bilhete Dourado</h3>
-      <p>Premiações especiais para membros.</p>
-    </article>
-
-    <article class="premio">
-      <span>🏞️</span>
-      <h3>Paisagens</h3>
-      <p>Sorteios e recompensas exclusivas.</p>
-    </article>
-
-    <article class="premio">
-      <span>💎</span>
-      <h3>Gemas</h3>
-      <p>Prêmios em eventos selecionados.</p>
-    </article>
-  </div>
-</section>
-
-<section id="recrutamento" class="recrutamento">
-  <div class="recrutamento-conteudo">
-    <span>🔥 RECRUTAMENTO</span>
-    <h2>Faça parte da Fênix</h2>
-    <p>
-      Procuramos jogadores comprometidos com guerras, Liga de Clãs,
-      Jogos do Clã e evolução em equipe.
-    </p>
-
-    <div class="requisitos">
-      <span>🏰 CV17+</span>
-      <span>⚔️ Ativo em guerras</span>
-      <span>🤝 Comprometimento</span>
-      <span>🔥 Espírito de equipe</span>
-    </div>
-
-    <a
-      class="btn btn-principal"
-      href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=%23VJ8GGLR8"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Abrir clã no jogo
-    </a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="footer-logo">🔥</div>
-  <h2>CLÃ FÊNIX</h2>
-  <p>#VJ8GGLR8</p>
-  <small>© 2026 Clã Fênix • Clash of Clans</small>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
